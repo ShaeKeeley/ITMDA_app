@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAdd_Asset"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#214ED3"
+        android:text="Add Asset"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="583dp"
+        tools:context=".MainActivity"/>/>
+
+    <Button
+        android:id="@+id/btnNew_Claim"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#214ED3"
+        android:text="New Claim"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="667dp"
+        tools:context=".MainActivity"/>
+
+    <ImageButton
+        android:id="@+id/profile_img"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        tools:layout_editor_absoluteX="330dp"
+        tools:layout_editor_absoluteY="670dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:visibility="visible"
+        app:barrierDirection="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="168dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="415dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#214ED3"
+        android:gravity="center"
+        android:text="INSURED ASSETS"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="102dp"
+        tools:textAlignment="viewStart" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="413dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/mainphoto"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-30dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <TextView
+        android:id="@+id/txtDesc"
+        android:layout_width="215dp"
+        android:layout_height="108dp"
+        android:text="Description:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
