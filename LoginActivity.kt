@@ -1,46 +1,50 @@
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.insuranceapp.R
+import com.example.insuranceapp.database.DatabaseHelper
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var edituser: EditText
+    private lateinit var editpword: EditText
+    private lateinit var loginbtn: Button
+    private lateinit var dbh: DatabaseHelper
 
-    private lateinit var usernameEditText: EditText
-    private lateinit var passwordEditText: EditText
-    private lateinit var loginButton: Button
-    private lateinit var registerTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
-        usernameEditText = findViewById(R.id.username)
-        passwordEditText = findViewById(R.id.password)
-        loginButton = findViewById(R.id.loginButton)
-        registerTextView = findViewById(R.id.txtLink)
+        loginbtn = findViewById(R.id.loginButton)
+        edituser = findViewById(R.id.username)
+        editpword = findViewById(R.id.password)
+        dbh = DatabaseHelper(this)
 
-        loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
+        loginbtn.setOnClickListener() {
+            val useredtx = edituser.text.toString()
+            val passedtx = editpword.text.toString()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter username and password", Toast.LENGTH_SHORT).show()
-            } else if (username == "your_username" && password == "your_password") {
-                // Login successful
-                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                // Add code here to navigate to the main screen of your app
+            if (TextUtils.isEmpty(useredtx) || TextUtils.isEmpty(passedtx)) {
+                Toast.makeText(this, "Add Username, Password", Toast.LENGTH_SHORT).show()
             } else {
-                // Login failed
-                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                val checkuser = dbh.checkuserpass(useredtx, passedtx)
+                if (checkuser) {
+                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(applicationContext, success::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Wrong Username and Password", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
-        registerTextView.setOnClickListener {
-            // Add code here to navigate to the registration page
+        val txtLink = findViewById<TextView>(R.id.txtLink)
+        txtLink.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
         }
