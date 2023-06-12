@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#2196F3"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/image"
+            android:contentDescription="@string/todo"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/fullName_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:fontFamily="sans-serif"
+            android:includeFontPadding="true"
+            android:text="@string/fred_venter"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/policyNo_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullName_field"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profile_image"
+            android:includeFontPadding="true"
+            android:text="@string/fv006"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <!-- Text fields for dynamic data -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#5A5A5A"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_border"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="51dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/claims"
+                    android:contentDescription="TODO" />
+                <!-- need to figure out how the premium is gonna be set
+                like where is the information gonna be pulled from
+                or can it be hardcoded-->
+                <TextView
+                    android:id="@+id/claim_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="true"
+                    android:paddingTop="30dp"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/claim_amount_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/claim_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="true"
+                    android:text="Amount of claims"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!--the amount of claims will display from the kotlin code apparently
+        which is linked to the claims page-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#5A5A5A"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_border"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="51dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/premium"
+                    android:contentDescription="TODO" />
+                <!--need to figure out how the premium is gonna be set
+                like where is the information gonna be pulled from
+                or can it be hardcoded-->
+                <TextView
+                    android:id="@+id/premium_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="false"
+                    android:paddingTop="30dp"
+                    android:text="R575.00"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/premium_amount_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/premium_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="true"
+                    android:text="Monthly Premium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <!-- database code must be put or referred to in space
+   of the "text"username:placeholder""-->
+    <!--the name and policy number must be displayed at top
+    and the name must also be displayed at the bottom?
+    then the email will get pulled from the database as well
+    need to get the name from the register database maybe-->
+
+    <!-- database code must be put or referred to in space
+    of the "text"email:placeholder""-->
+
+    <TextView
+        android:id="@+id/phoneNo_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="Phone Number: Placeholder"
+        android:textSize="16sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/email_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="Email: Placeholder"
+        android:textSize="16sp"
+        android:textAlignment="center"/>
+    <!--add buttons to navigate back to home page
+    and whatever other buttons christiaan has in his page-->
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Go to Home"
+        android:onClick="goToHomePage" />
+
+</LinearLayout>
