@@ -8,12 +8,15 @@
     tools:context=".MainActivity"
     android:background="#2196F3">
 
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="232dp"
-        android:layout_height="27dp"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
         android:scaleType="fitXY"
-        tools:srcCompat="@drawable/logo_1" />
+        tools:srcCompat="@drawable/logo_1"
+        android:importantForAccessibility="no" />
+
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -33,36 +36,38 @@
                 android:layout_width="415dp"
                 android:layout_height="109dp"
                 android:layout_gravity="bottom"
-                tools:ignore="BottomAppBar,MissingConstraints"
+                tools:ignore="BottomAppBar,MissingConstraints,VisualLintBottomAppBar"
                 tools:layout_editor_absoluteX="-3dp"
                 tools:layout_editor_absoluteY="629dp" />
 
             <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="219dp"
-                android:layout_height="115dp"
-                android:src="@drawable/ic_home_black_24dp"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="-11dp"
-                tools:layout_editor_absoluteY="623dp" />
+                android:id="@+id/imageButton3"
+                android:layout_width="225dp"
+                android:layout_height="124dp"
+                android:importantForAccessibility="no"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                tools:ignore="MissingConstraints,ImageContrastCheck"
+                tools:layout_editor_absoluteX="199dp"
+                tools:layout_editor_absoluteY="621dp" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="228dp"
-                android:layout_height="113dp"
-                android:src="@android:drawable/ic_menu_my_calendar"
+                android:id="@+id/imageButton"
+                android:layout_width="218dp"
+                android:layout_height="124dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_home_black_24dp"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="187dp"
-                tools:layout_editor_absoluteY="623dp" />
+                tools:layout_editor_absoluteX="-3dp"
+                tools:layout_editor_absoluteY="621dp" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView2"
                 android:layout_width="418dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="104dp"
                 android:background="#214ED3"
                 android:backgroundTint="@color/lavender"
-                android:text="  < NEW CLAIM"
+                android:text="@string/new_claim"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/white"
@@ -70,11 +75,11 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="-4dp" />
+                tools:layout_editor_absoluteX="-5dp" />
 
             <LinearLayout
-                android:layout_width="343dp"
-                android:layout_height="378dp"
+                android:layout_width="338dp"
+                android:layout_height="404dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#FFFFFF"
                 android:orientation="vertical"
@@ -89,43 +94,55 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    app:helperText="required"
+                    app:helperText="@string/required"
                     app:helperTextTextColor="@android:color/holo_red_dark">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/descriptionEditText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="Description of Incident"
+                        android:hint="@string/description_of_incident"
                         android:inputType="text" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="ADD IMAGES" />
+                        android:text="@string/add_images"
+                        android:textSize="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_contraintBottom_toBottomOf="parent"
+                        app:layput_constraintTop_toBottomOf="@id+/imageView" />
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
-                        android:id="@+id/floatingActionButton"
+
+                    <ImageView
+                        android:id="@+id/imageView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:clickable="true"
-                        android:src="@android:drawable/ic_menu_add"
-                        app:backgroundTint="#B1B8A9" />
+                        android:layout_marginBottom="26dp"
+                        android:background="#B1B8A9"
+                        android:onClick="pickPhoto"
+                        app:backgroundTint="#B1B8A9"
+                        app:layput_constraintTop_toTopOf="parent"
+                        app:srcCompat="@android:drawable/ic_menu_add" />
 
-                    <Button
+
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/buttonSubmit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="80dp"
                         android:backgroundTint="@color/lavender"
                         android:enabled="false"
                         android:onClick="submitForm"
-                        android:text="Submit"
-                        android:textColor="#FFFFFF" />
+                        android:text="@string/submit"
+                        android:textColor="#FFFFFF"
+                        app:layout_constarintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/descriptionContainer" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
