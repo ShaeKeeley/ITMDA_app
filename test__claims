@@ -1,0 +1,51 @@
+package com.example.insuranceapp
+
+import android.content.Intent
+import android.os.Bundle
+import android.os.PersistableBundle
+import android.text.TextUtils
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.insuranceapp.database.DatabaseHelper
+
+class ClaimsActivity : AppCompatActivity() {
+    private lateinit var description: EditText
+    private lateinit var addimage: Button
+    private lateinit var submitbtn: Button
+    private lateinit var db: DatabaseHelper
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.claims)
+
+        val textView = findViewById<TextView>(R.id.txtLink)
+        textView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        description = findViewById(R.id.descriptionEditText)
+        addimage = findViewById(R.id.imageViewAdd)
+        submitbtn = findViewById(R.id.buttonSubmit)
+        db = DatabaseHelper(this)
+
+        submitbtn.setOnClickListener() {
+            val descriptiontext = description.text.toString()
+            ///// add buttons ///
+            val savedata = db.insertdata(descriptiontext)
+
+            if (TextUtils.isEmpty(descriptiontext)) {
+
+                Toast.makeText(
+                    this,
+                    "Missing something",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+}
+
