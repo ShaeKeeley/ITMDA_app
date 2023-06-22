@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ProfileActivity"
+    android:orientation="vertical"
+    android:background="@drawable/tester3">
+
+    <!-- Text fields for dynamic data -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="302dp"
+        android:background="@drawable/boorderthing"
+        android:padding="20dp">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/profile_image"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="100dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginTop="500dp"-->
+        <!--            android:src="@drawable/pic"-->
+        <!--            tools:ignore="ContentDescription" />-->
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/untied"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/fullName_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:paddingTop="20dp"
+            android:fontFamily="sans-serif"
+            android:includeFontPadding="true"
+            android:text="@+id/fullName_field"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/policyNo_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullName_field"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:includeFontPadding="true"
+            android:text="@+id/policyNo_field"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:padding="20dp"
+        android:background="@drawable/boorderthing">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#5A5A5A"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_border"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="51dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/claims"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/claim_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="true"
+                    android:paddingTop="30dp"
+                    android:text="10"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/claim_amount_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/claim_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="true"
+                    android:text="Amount of claims"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#5A5A5A"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_border"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="51dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/premium"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:id="@+id/premium_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:includeFontPadding="false"
+                    android:paddingTop="30dp"
+                    android:text="R575.00"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/premium_amount_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/premium_label"
+                    android:layout_centerHorizontal="true"
+                    android:includeFontPadding="true"
+                    android:text="Monthly Premium"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+
+    <!-- Email field -->
+    <TextView
+        android:id="@+id/email_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="@+id/email_field"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/phoneNo_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="@+id/phoneNo_field"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Home"
+        android:onClick="goToHomePage"
+        android:background="@color/white"/>
+
+</LinearLayout>
