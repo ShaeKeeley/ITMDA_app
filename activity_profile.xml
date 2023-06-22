@@ -4,55 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainActivity"
-    android:orientation="vertical">
+    tools:context="ProfileActivity"
+    android:orientation="vertical"
+    android:background="@drawable/tester3">
+
+    <!-- Text fields for dynamic data -->
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="#2196F3"
+        android:layout_height="302dp"
+        android:background="@drawable/boorderthing"
         android:padding="20dp">
 
+        <!--        <ImageView-->
+        <!--            android:id="@+id/profile_image"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="100dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:layout_marginTop="500dp"-->
+        <!--            android:src="@drawable/pic"-->
+        <!--            tools:ignore="ContentDescription" />-->
+
         <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/image"
-            android:contentDescription="@string/todo"
-            tools:ignore="ContentDescription" />
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/untied"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:id="@+id/fullName_field"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/profile_image"
+            android:layout_marginTop="50dp"
+            android:paddingTop="20dp"
             android:fontFamily="sans-serif"
             android:includeFontPadding="true"
-            android:text="@string/fred_venter"
+            android:text="@+id/fullName_field"
+            android:textStyle="bold"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="30sp" />
+            android:textSize="50sp" />
 
         <TextView
             android:id="@+id/policyNo_field"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/fullName_field"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/profile_image"
+            android:layout_marginTop="30dp"
             android:includeFontPadding="true"
-            android:text="@string/fv006"
-            android:textSize="20sp" />
+            android:text="@+id/policyNo_field"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"/>
     </RelativeLayout>
 
-    <!-- Text fields for dynamic data -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:background="@drawable/boorderthing">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
@@ -73,10 +88,8 @@
                     android:layout_height="51dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/claims"
-                    android:contentDescription="TODO" />
-                <!-- need to figure out how the premium is gonna be set
-                like where is the information gonna be pulled from
-                or can it be hardcoded-->
+                    android:layout_marginTop="2dp"/>
+
                 <TextView
                     android:id="@+id/claim_label"
                     android:layout_width="wrap_content"
@@ -101,8 +114,7 @@
                     android:textSize="15sp" />
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
-        <!--the amount of claims will display from the kotlin code apparently
-        which is linked to the claims page-->
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="125dp"
@@ -122,10 +134,8 @@
                     android:layout_height="51dp"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/premium"
-                    android:contentDescription="TODO" />
-                <!--need to figure out how the premium is gonna be set
-                like where is the information gonna be pulled from
-                or can it be hardcoded-->
+                    android:layout_marginTop="2dp" />
+
                 <TextView
                     android:id="@+id/premium_label"
                     android:layout_width="wrap_content"
@@ -151,41 +161,36 @@
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-    <!-- database code must be put or referred to in space
-   of the "text"username:placeholder""-->
-    <!--the name and policy number must be displayed at top
-    and the name must also be displayed at the bottom?
-    then the email will get pulled from the database as well
-    need to get the name from the register database maybe-->
 
-    <!-- database code must be put or referred to in space
-    of the "text"email:placeholder""-->
+
+
+    <!-- Email field -->
+    <TextView
+        android:id="@+id/email_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:text="@+id/email_field"
+        android:textSize="20sp"
+        android:textAlignment="center" />
+
 
     <TextView
         android:id="@+id/phoneNo_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:text="Phone Number: Placeholder"
-        android:textSize="16sp"
-        android:textAlignment="center"/>
+        android:text="@+id/phoneNo_field"
+        android:textSize="20sp"
+        android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/email_field"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="Email: Placeholder"
-        android:textSize="16sp"
-        android:textAlignment="center"/>
-    <!--add buttons to navigate back to home page
-    and whatever other buttons christiaan has in his page-->
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Go to Home"
-        android:onClick="goToHomePage" />
+        android:text="Home"
+        android:onClick="goToHomePage"
+        android:background="@color/white"/>
 
 </LinearLayout>
