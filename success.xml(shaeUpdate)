@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tester3"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="LoginActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/boorderthing"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:layout_marginBottom="-10dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/untied" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="-50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/custom_edittext"
+            android:orientation="vertical"
+            android:padding="1dp"
+            android:layout_marginTop="-20dp">
+
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home page"
+                android:textAlignment="center"
+                android:textColor="@color/lavender"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="-4dp"
+                android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/card1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="right"
+                android:clickable="true"
+                android:contentDescription="icon"
+                android:gravity="right"
+                android:layout_marginBottom="-45dp"
+                android:layout_marginRight="60dp"
+                android:src="@drawable/tester3" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="138dp"
+                android:layout_height="26dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:text="Status:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/carmodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Car Model:"
+                android:text="@+id/carmodel" />
+
+            <EditText
+                android:id="@+id/year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Year"
+                android:text="@+id/carmodel" />
+
+            <EditText
+                android:id="@+id/Licenceplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="License Plate"
+                android:text="@+id/carmodel" />
+
+            <EditText
+                android:id="@+id/dateinsured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date Insured"
+                android:text="@+id/carmodel" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:text="@+id/carmodel" />
+        </LinearLayout>
+
+            <Button
+                android:id="@+id/Profile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/lavender"
+                android:text="Profile"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/Addclaim"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/lavender"
+                android:text="Add Claim"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+
+            <Button
+                android:id="@+id/AddAsset"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/lavender"
+                android:text="Add Asset"
+                android:textSize="18sp"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/txtLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click to go back"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginTop="-20"/>
+</LinearLayout>
