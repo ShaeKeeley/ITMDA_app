@@ -59,7 +59,7 @@ class DatabaseHelper(context: Context) :
         val db = this.writableDatabase
         val values = ContentValues()
         values.put("description", desc)
-        values.put("claimsImg", imageBytes)
+        values.put("claimImg", imageBytes)
         db.update("Userdata", values, "username = ?", arrayOf(username))
     }
     fun insertData4(db: SQLiteDatabase?, username: String, date1: String, time1: String) {
